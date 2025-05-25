@@ -147,37 +147,113 @@
 // END OF TASK 6
 // THANKS FOR YOUR ATTENTATION
 
+// ATM STARTS
+// var balance = 1000;
+
+// var pass = "9040";
+
+// var retryCount = 3;
+
+// while (retryCount > 0) {
+//   var userPassword = prompt("kod daxil edin");
+//   if (userPassword === pass) {
+//     console.log("xos gelmisiniz ");
+
+//     while (balance > 0) {
+//       var money = Number(prompt("cixaracaginiz meblegi yazin"));
+
+//       isContinued = true;
+
+//       if (money <= balance && isContinued == true) {
+//         balance = balance - money;
+
+//         console.log(`cixardiginiz mebleg: ${money}, balans: ${balance}`);
+//       } else {
+//         console.warn(
+//           `bu meblegi cixara bilmezsinin maks cixara bileceyiniz mebleg: ${balance}`
+//         );
+//       }
+
+//       isContinued = confirm("davam yoxsa tamam");
+//     }
+
+//     if (!isContinued) {
+//       console.log("gorusenedek");
+//     }
+//     if (balance === 0) {
+//       console.warn("balans 0dir, gorusenedek");
+//       break;
+//     }
+//   } else {
+//     retryCount--;
+//     if (retryCount === 0) {
+//       console.log("kartiniz bloklandi zehmet olmasa banka muraciet edin");
+//       break;
+//     }
+//     console.log(
+//       "sehv daxil etdiniz bir daha cehd edin, qalan cehd sayi: ",
+//       retryCount
+//     );
+//   }
+// }
+// END OF ATM
+
+// my ATM
+
+// var nickName = prompt("xos gelmisiniz,zehmet olmasa nickname qeyd edin");
+// if (!nickName) {
+//   console.log("nick qeyd etmemisiniz, qeyd edin zehmet olmasa");
+//   break;
+// }
+// var pass = prompt("kod daxil edin");
+// if (!pass) {
+//   console.log("kod qeyd etmemisiniz, qeyd edin zehmet olmasa");
+//   break;
+// }
+
+// if(nickName && pass){
+//   user =[nickName, pass]
+// }
+
 var balance = 1000;
 
-var pass = "9040";
-
-var retryCount = 3;
+var retryCount = 100;
 
 while (retryCount > 0) {
-  var userPassword = prompt("kod daxil edin");
-  if (userPassword === pass) {
-    console.log("xos gelmisiniz ");
+  var nickName = prompt("xos gelmisiniz,zehmet olmasa nickname qeyd edin");
 
-    while (balance > 0) {
-      var money = Number(prompt("cixaracaginiz meblegi yazin"));
+  var pass = prompt("kod daxil edin");
 
-      isContinued = true;
+  if (nickName && pass) {
+    var user = {
+      nickName: nickName,
+      pass: pass,
+    };
+    var userNickname = prompt("login daxil edin");
+    var userPassword = prompt("kod daxil edin");
+    if (userPassword === user.pass && userNickname === user.nickName) {
+      console.log("xos gelmisiniz ");
 
-      if (money <= balance && isContinued == true) {
-        balance = balance - money;
+      while (balance > 0 && isContinued) {
+        var money = Number(prompt("cixaracaginiz meblegi yazin"));
 
-        console.log(`cixardiginiz mebleg: ${money}, balans: ${balance}`);
-      } else {
-        console.warn(
-          `bu meblegi cixara bilmezsinin maks cixara bileceyiniz mebleg: ${balance}`
-        );
+        var isContinued = true;
+
+        if (money <= balance && isContinued == true) {
+          balance = balance - money;
+
+          console.log(`cixardiginiz mebleg: ${money}, balans: ${balance}`);
+        } else {
+          console.warn(
+            `bu meblegi cixara bilmezsinin maks cixara bileceyiniz mebleg: ${balance}`
+          );
+        }
+
+        isContinued = confirm("davam yoxsa tamam");
       }
 
-      isContinued = confirm("davam yoxsa tamam");
-    }
-
-    if (!isContinued) {
-      console.log("gorusenedek");
+      // if (!isContinued) {
+      //   console.log("gorusenedek");
     }
     if (balance === 0) {
       console.warn("balans 0dir, gorusenedek");
@@ -195,5 +271,3 @@ while (retryCount > 0) {
     );
   }
 }
-
-// something
